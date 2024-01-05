@@ -60,6 +60,12 @@ export class AspavaGenerator {
     return this;
   }
 
+  capitalize() {
+    this.parts = this.parts.map((part) => part.charAt(0).toUpperCase() + part.slice(1).toLowerCase());
+
+    return this;
+  }
+
   *generator(n = DEFAULT_GENERATION) {
     let i = 0;
 
