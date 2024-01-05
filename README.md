@@ -104,6 +104,12 @@ const aspava = new AspavaGenerator(customWords);
    aspava.lower(); // Converts all words to lowercase
    ```
 
+5. **Convert words to capitalize:**
+
+   ```javascript
+   aspava.capitalize(); // Converts all words to capitalize
+   ```
+
 ### Using the Generator
 
 The `generator()` method yields a sequence of words up to a specified maximum
