@@ -1,4 +1,4 @@
-export const MAX_GENERATION = 6;
+export const DEFAULT_GENERATION = 6;
 
 export const originalParts = [
   "Allah",
@@ -60,10 +60,10 @@ export class AspavaGenerator {
     return this;
   }
 
-  *generator() {
+  *generator(n = DEFAULT_GENERATION) {
     let i = 0;
 
-    while (i < MAX_GENERATION) {
+    while (i < n) {
       yield this.get(i++);
     }
   }

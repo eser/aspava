@@ -7,8 +7,8 @@ generate sequences of words or phrases. It is a flexible and easy-to-use tool
 that can be particularly useful for various applications, such as text
 processing, generative art, and educational purposes.
 
-This library is built around a simple yet powerful class, `ASPAVA`, which
-provides various methods for manipulating a list of words or phrases. By
+This library is built around a simple yet powerful class, `AspavaGenerator`,
+which provides various methods for manipulating a list of words or phrases. By
 default, it comes with a predefined list of words, but it can be easily
 customized to suit your needs.
 
@@ -107,10 +107,10 @@ const aspava = new AspavaGenerator(customWords);
 ### Using the Generator
 
 The `generator()` method yields a sequence of words up to a specified maximum
-generation count (`MAX_GENERATION`).
+generation count (default is 6).
 
 ```javascript
-for (const word of aspava.generator()) {
+for (const word of aspava.generator(6)) {
   console.log(word);
 }
 ```
@@ -123,8 +123,8 @@ Here is a complete example demonstrating various functionalities of the
 ```javascript
 import aspava from "npm:aspava";
 
-// Shuffle and print each word in uppercase
-for (const word of aspava.shuffle().upper().generator()) {
+// Generate 100 words, shuffle them and print each word in uppercase
+for (const word of aspava.shuffle().upper().generator(100)) {
   console.log(word);
 }
 ```
