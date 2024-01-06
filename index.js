@@ -22,8 +22,8 @@ export class AspavaGenerator {
     return this.parts;
   }
 
-  getAsString() {
-    return this.parts.join(" ");
+  getAsString(separator = " ") {
+    return this.parts.join(separator);
   }
 
   getFirstLetters() {
