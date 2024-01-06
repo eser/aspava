@@ -22,8 +22,8 @@ export class AspavaGenerator {
     return this.parts;
   }
 
-  getAsString() {
-    return this.parts.join(" ");
+  getAsString(separator = " ") {
+    return this.parts.join(separator);
   }
 
   getFirstLetters() {
@@ -56,6 +56,18 @@ export class AspavaGenerator {
 
   lower() {
     this.parts = this.parts.map((part) => part.toLowerCase());
+
+    return this;
+  }
+
+  add(part) {
+    this.parts.push(part);
+
+    return this;
+  }
+  
+  remove(part) {
+    this.parts = this.parts.filter(p => p !== part);
 
     return this;
   }
