@@ -60,6 +60,18 @@ export class AspavaGenerator {
     return this;
   }
 
+  addPart(part) {
+    this.parts.push(part);
+
+    return this;
+  }
+  
+  removePart(part) {
+    this.parts = this.parts.filter(p => p !== part);
+    
+    return this;
+  }
+
   *generator(n = DEFAULT_GENERATION) {
     let i = 0;
 
