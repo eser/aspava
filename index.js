@@ -60,15 +60,15 @@ export class AspavaGenerator {
     return this;
   }
 
-  addPart(part) {
+  add(part) {
     this.parts.push(part);
 
     return this;
   }
   
-  removePart(part) {
+  remove(part) {
     this.parts = this.parts.filter(p => p !== part);
-    
+
     return this;
   }
 
