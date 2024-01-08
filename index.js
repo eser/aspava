@@ -1,13 +1,6 @@
 export const DEFAULT_GENERATION = 6;
 
-export const originalParts = [
-  "Allah",
-  "Saglik",
-  "Para",
-  "Ask",
-  "Versin",
-  "Amin",
-];
+export const originalParts = ["Allah", "Saglik", "Para", "Ask", "Versin", "Amin"];
 
 export class AspavaGenerator {
   constructor(parts = originalParts) {
@@ -31,7 +24,10 @@ export class AspavaGenerator {
   }
 
   shuffle() {
-    this.parts = this.parts.toSorted(() => Math.random() - 0.5);
+    for (let i = this.parts.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [this.parts[i], this.parts[j]] = [this.parts[j], this.parts[i]];
+    }
 
     return this;
   }
